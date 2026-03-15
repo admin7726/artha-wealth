@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Artha Wealth Advisors | SEBI Registered Investment Advisor</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#0B1F45;
+  --navy-light:#162d5e;
+  --gold:#C9A84C;
+  --gold-light:#E8C97A;
+  --cream:#FAF8F3;
+  --text-dark:#1a1a2e;
+  --text-mid:#4a5568;
+  --text-light:#718096;
+  --white:#ffffff;
+  --border:#e2ddd4;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;color:var(--text-dark);background:var(--white);line-height:1.7;}
+
+/* SEBI TICKER */
+.sebi-ticker{background:var(--navy);color:var(--gold-light);font-size:11.5px;padding:7px 0;overflow:hidden;letter-spacing:0.03em;}
+.ticker-inner{display:flex;gap:60px;animation:ticker 28s linear infinite;white-space:nowrap;width:max-content;}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.ticker-inner span{opacity:0.85;}
+.ticker-inner strong{color:var(--gold);font-weight:500;}
+
+/* NAV */
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 5%;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;height:68px;}
+.logo{display:flex;flex-direction:column;line-height:1.2;}
+.logo-name{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:700;letter-spacing:0.01em;}
+.logo-sub{font-size:10px;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;font-weight:500;}
+.nav-links{display:flex;gap:28px;align-items:center;}
+.nav-links a{text-decoration:none;color:var(--text-mid);font-size:14px;font-weight:400;transition:color 0.2s;}
+.nav-links a:hover{color:var(--navy);}
+.nav-cta{background:var(--navy);color:var(--white)!important;padding:9px 22px;border-radius:4px;font-size:13.5px!important;font-weight:500!important;transition:background 0.2s!important;}
+.nav-cta:hover{background:var(--navy-light)!important;color:var(--white)!important;}
+
+/* HERO */
+.hero{background:var(--navy);min-height:88vh;display:flex;align-items:center;padding:80px 5%;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;right:-120px;top:-120px;width:600px;height:600px;border-radius:50%;border:1px solid rgba(201,168,76,0.15);}
+.hero::after{content:'';position:absolute;right:60px;top:60px;width:360px;height:360px;border-radius:50%;border:1px solid rgba(201,168,76,0.08);}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:center;width:100%;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);color:var(--gold-light);font-size:12px;letter-spacing:0.08em;padding:6px 14px;border-radius:3px;margin-bottom:28px;text-transform:uppercase;font-weight:500;}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;}
+h1{font-family:'Playfair Display',serif;font-size:clamp(36px,4.5vw,58px);color:var(--white);font-weight:700;line-height:1.18;margin-bottom:22px;}
+h1 em{color:var(--gold);font-style:normal;}
+.hero-desc{color:rgba(255,255,255,0.72);font-size:17px;font-weight:300;max-width:520px;margin-bottom:38px;line-height:1.8;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary{background:var(--gold);color:var(--navy);padding:13px 30px;border-radius:4px;font-size:14.5px;font-weight:500;text-decoration:none;letter-spacing:0.02em;transition:background 0.2s;}
+.btn-primary:hover{background:var(--gold-light);}
+.btn-outline{border:1px solid rgba(255,255,255,0.35);color:var(--white);padding:13px 30px;border-radius:4px;font-size:14.5px;font-weight:400;text-decoration:none;transition:border-color 0.2s;}
+.btn-outline:hover{border-color:var(--gold);}
+.hero-card{background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.2);border-radius:8px;padding:32px;backdrop-filter:blur(4px);}
+.hero-card-title{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-weight:500;}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.stat{padding:16px;background:rgba(255,255,255,0.04);border-radius:5px;border:1px solid rgba(255,255,255,0.07);}
+.stat-num{font-family:'Playfair Display',serif;font-size:28px;color:var(--white);font-weight:600;line-height:1;}
+.stat-label{font-size:12px;color:rgba(255,255,255,0.5);margin-top:5px;}
+.sebi-box{margin-top:16px;padding:14px 16px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);border-radius:5px;}
+.sebi-box p{font-size:12px;color:rgba(255,255,255,0.6);margin-bottom:3px;}
+.sebi-box strong{color:var(--gold-light);font-size:13px;letter-spacing:0.04em;}
+
+/* SECTION COMMONS */
+section{padding:90px 5%;}
+.section-inner{max-width:1200px;margin:0 auto;}
+.section-label{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:10px;}
+h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,40px);color:var(--navy);font-weight:700;line-height:1.25;}
+.section-sub{font-size:16px;color:var(--text-light);max-width:560px;margin-top:12px;line-height:1.8;}
+
+/* SERVICES */
+.services-bg{background:var(--cream);}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:48px;}
+.service-card{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:28px;transition:border-color 0.25s,transform 0.2s;}
+.service-card:hover{border-color:var(--gold);transform:translateY(-3px);}
+.service-icon{width:44px;height:44px;background:rgba(11,31,69,0.06);border-radius:5px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:20px;}
+.service-card h3{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);font-weight:600;margin-bottom:10px;}
+.service-card p{font-size:14px;color:var(--text-light);line-height:1.75;}
+
+/* ABOUT */
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.about-img-block{position:relative;}
+.about-img-box{background:var(--navy);border-radius:6px;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;}
+.about-img-box::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(201,168,76,0.04) 0px,rgba(201,168,76,0.04) 1px,transparent 1px,transparent 12px);}
+.about-avatar{width:100px;height:100px;border-radius:50%;background:rgba(201,168,76,0.15);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:36px;color:var(--gold);}
+.about-tag{position:absolute;bottom:-18px;right:-18px;background:var(--gold);color:var(--navy);padding:16px 20px;border-radius:5px;font-size:13px;font-weight:500;line-height:1.4;}
+.about-tag strong{display:block;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.credentials{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0;}
+.cred-badge{background:var(--cream);border:1px solid var(--border);padding:6px 14px;border-radius:3px;font-size:12.5px;color:var(--text-mid);}
+blockquote{border-left:3px solid var(--gold);padding-left:18px;color:var(--text-mid);font-size:15px;font-style:italic;line-height:1.8;margin:24px 0;}
+
+/* PROCESS */
+.process-bg{background:var(--navy);}
+.process-bg h2{color:var(--white);}
+.process-bg .section-sub{color:rgba(255,255,255,0.55);}
+.process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin-top:56px;position:relative;}
+.step{padding:0 28px;border-right:1px solid rgba(201,168,76,0.15);text-align:center;}
+.step:last-child{border-right:none;}
+.step-num{font-family:'Playfair Display',serif;font-size:48px;color:rgba(255, 193, 23, 0.604);font-weight:700;line-height:1;margin-bottom:12px;}
+.step-title{font-family:'Playfair Display',serif;font-size:17px;color:var(--white);font-weight:600;margin-bottom:8px;}
+.step-desc{font-size:13.5px;color:rgba(255,255,255,0.5);line-height:1.7;}
+
+/* COMPLIANCE */
+.compliance-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:48px;}
+.compliance-card{border-radius:6px;padding:28px;}
+.compliance-card.disclaimer{background:#FFF8E7;border:1px solid #f0d990;}
+.compliance-card.fees{background:#EFF6FF;border:1px solid #bfd6f8;}
+.compliance-card.grievance{background:#F0FFF4;border:1px solid #9ae6b4;}
+.compliance-card.risk{background:#FFF5F5;border:1px solid #feb2b2;}
+.compliance-card h3{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.compliance-card p, .compliance-card li{font-size:13.5px;color:var(--text-mid);line-height:1.75;}
+.compliance-card ul{padding-left:16px;}
+
+/* TESTIMONIALS */
+.testimonials-bg{background:var(--cream);}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:48px;}
+.testimonial{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:28px;}
+.stars{color:var(--gold);font-size:14px;margin-bottom:14px;}
+.testimonial p{font-size:14.5px;color:var(--text-mid);line-height:1.8;font-style:italic;margin-bottom:16px;}
+.testimonial-author{font-size:13px;font-weight:500;color:var(--navy);}
+.testimonial-role{font-size:12px;color:var(--text-light);}
+
+/* CONTACT / LEAD */
+.contact-inner{display:grid;grid-template-columns:1fr 480px;gap:80px;align-items:start;}
+.contact-info h2{margin-bottom:16px;}
+.contact-detail{display:flex;gap:14px;align-items:flex-start;margin:18px 0;}
+.contact-icon{width:36px;height:36px;background:rgba(11,31,69,0.07);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;}
+.contact-detail p{font-size:14px;color:var(--text-light);}
+.contact-detail strong{display:block;color:var(--text-dark);font-size:15px;margin-bottom:2px;}
+.lead-form{background:var(--cream);border:1px solid var(--border);border-radius:8px;padding:36px;}
+.lead-form h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--navy);margin-bottom:6px;}
+.lead-form .form-sub{font-size:13.5px;color:var(--text-light);margin-bottom:24px;}
+.form-group{margin-bottom:16px;}
+.form-group label{display:block;font-size:13px;color:var(--text-mid);margin-bottom:6px;font-weight:500;}
+.form-group input, .form-group select, .form-group textarea{width:100%;border:1px solid var(--border);border-radius:4px;padding:11px 14px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--text-dark);background:var(--white);outline:none;transition:border-color 0.2s;}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus{border-color:var(--navy);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.form-disclaimer{font-size:11.5px;color:var(--text-light);line-height:1.6;margin-top:8px;}
+.form-submit{width:100%;background:var(--navy);color:var(--white);border:none;padding:13px;border-radius:4px;font-size:14.5px;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;margin-top:4px;transition:background 0.2s;letter-spacing:0.02em;}
+.form-submit:hover{background:var(--navy-light);}
+
+/* FOOTER */
+footer{background:var(--navy);padding:56px 5% 0;}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.08);}
+.footer-brand .logo-name{font-size:19px;}
+.footer-brand .logo-sub{margin-bottom:14px;display:block;}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.8;max-width:280px;margin-bottom:16px;}
+.footer-sebi{background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);border-radius:4px;padding:10px 14px;display:inline-block;}
+.footer-sebi p{font-size:11px;color:rgba(255,255,255,0.45);margin-bottom:2px;}
+.footer-sebi strong{font-size:12px;color:var(--gold-light);}
+.footer-col h4{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);font-weight:500;margin-bottom:16px;}
+.footer-col a{display:block;color:rgba(255,255,255,0.55);font-size:13.5px;text-decoration:none;margin-bottom:9px;transition:color 0.2s;}
+.footer-col a:hover{color:var(--gold-light);}
+.footer-bottom{padding:20px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,0.3);}
+.footer-disclaimer{background:rgba(0,0,0,0.25);border-top:1px solid rgba(255,255,255,0.05);padding:20px 0;margin-top:0;}
+.footer-disclaimer p{font-size:11.5px;color:rgba(255,255,255,0.3);line-height:1.8;max-width:1200px;margin:0 auto;padding:0 5%;}
+
+@media(max-width:900px){
+  .hero-inner,.about-inner,.contact-inner{grid-template-columns:1fr;}
+  .hero-inner .hero-card{display:none;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .about-tag{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- SEBI COMPLIANCE TICKER -->
+<div class="sebi-ticker">
+  <div class="ticker-inner">
+    <span>⚠️ Investment in securities market are subject to market risks. Read all the related documents carefully before investing.</span>
+    <span>|</span>
+    <span>Registration does not guarantee performance of the intermediary.</span>
+    <span>|</span>
+    <span><strong>SEBI Reg. No: INA300016695</strong> | Validity: Perpetual | Category: Non-Individual</span>
+    <span>|</span>
+    <span>Investments are subject to market risk. Past performance is not indicative of future results.</span>
+    <span>|</span>
+    <span>⚠️ Investment in securities market are subject to market risks. Read all the related documents carefully before investing.</span>
+    <span>|</span>
+    <span>Registration does not guarantee performance of the intermediary.</span>
+    <span>|</span>
+    <span><strong>SEBI Reg. No: INA300016695</strong> | Validity: Perpetual | Category: Non-Individual</span>
+    <span>|</span>
+    <span>Investments are subject to market risk. Past performance is not indicative of future results.</span>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">
+      <span class="logo-name">Artha Wealth Advisors</span>
+      <span class="logo-sub">SEBI Registered Investment Advisor</span>
+    </div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#process">Process</a>
+      <a href="#compliance">Disclosures</a>
+      <a href="#contact" class="nav-cta">Get a Free Consultation</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">SEBI Registered · INA300016695</div>
+      <h1>Your Wealth.<br/>Our <em>Purpose.</em></h1>
+      <p class="hero-desc">Fee-only, unbiased investment advice rooted in research, discipline, and your long-term financial goals. No commissions. No conflicts. Just clarity.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Book Free Consultation</a>
+        <a href="#services" class="btn-outline">Explore Services</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <p class="hero-card-title">Practice at a glance</p>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-num">₹85Cr+</div>
+          <div class="stat-label">Assets Advised</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">320+</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">12+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">Fee-Only</div>
+          <div class="stat-label">No Commissions</div>
+        </div>
+      </div>
+      <div class="sebi-box">
+        <p>SEBI Registration No.</p>
+        <strong>INA300016695</strong>
+        <p style="margin-top:6px;">Registered with: SEBI | Type: RIA | Validity: Perpetual</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-bg" id="services">
+  <div class="section-inner">
+    <p class="section-label">What we offer</p>
+    <h2>Comprehensive Advisory Services</h2>
+    <p class="section-sub">Tailored financial solutions across every stage of your wealth journey — from accumulation to preservation.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">📈</div>
+        <h3>Equity & Stock Markets</h3>
+        <p>Research-backed equity advisory covering large, mid, and small cap opportunities aligned to your risk profile and investment horizon.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏦</div>
+        <h3>Mutual Fund Advisory</h3>
+        <p>Unbiased mutual fund recommendations across categories — equity, debt, hybrid — with no distributor commissions involved.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🗓️</div>
+        <h3>Financial Planning</h3>
+        <p>Holistic financial plans covering income, expenses, insurance, tax optimization, and retirement — built around your life, not products.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💼</div>
+        <h3>Portfolio Management</h3>
+        <p>Periodic review, rebalancing, and performance tracking of your investment portfolio to keep you on track to your targets.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎯</div>
+        <h3>Goal-Based Planning</h3>
+        <p>Dedicated plans for retirement, children's education, home purchase, or any major financial milestone — with clear timelines and milestones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-inner">
+      <div class="about-img-block">
+        <div class="about-img-box">
+          <div class="about-avatar">
+            <img src="https://media.licdn.com/dms/image/v2/C4D03AQHSbPMe9HxhlQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1606823148023?e=1775088000&v=beta&t=BsZoUMiSgB7bKI464F3ao3RhJ6nB36CRzyc9wbefgRI" alt="image">
+          </div>
+        </div>
+        <div class="about-tag"><strong>12+ Years</strong>In Financial Advisory</div>
+      </div>
+      <div>
+        <p class="section-label">About the Advisor</p>
+        <h2>DIBYAJIT SAHA, CFA</h2>
+        <div class="credentials">
+          <span class="cred-badge">CFA Charterholder</span>
+          <span class="cred-badge">CFP Certified</span>
+          <span class="cred-badge">SEBI RIA</span>
+          <span class="cred-badge">NISM Certified</span>
+        </div>
+        <blockquote>"I believe in putting the client first — always. As a fee-only advisor, my only incentive is your financial success."</blockquote>
+        <p style="color:var(--text-mid);font-size:15px;line-height:1.85;">With over 12 years of experience in equity research, mutual fund analysis, and personal financial planning, DIBYAJIT SAHA has helped 300+ families across India build wealth with confidence and clarity. Based in Kolkata, West Bengal, he serves clients pan-India through structured, transparent, and unbiased advisory services.</p>
+        <p style="color:var(--text-mid);font-size:15px;line-height:1.85;margin-top:14px;">Holding SEBI Registration No. INA300016695, the practice operates as a fee-only RIA — meaning there are no hidden commissions, no product push, and no conflict of interest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-bg" id="process">
+  <div class="section-inner">
+    <p class="section-label" style="color:var(--gold);">How it works</p>
+    <h2>Our Advisory Process</h2>
+    <p class="section-sub">A structured, transparent, 5-step approach to building and managing your wealth.</p>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Discovery Call</div>
+        <div class="step-desc">A free 30-minute consultation to understand your goals, current situation, and concerns.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Risk Profiling</div>
+        <div class="step-desc">We assess your risk tolerance, time horizon, and liquidity needs scientifically.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Financial Plan</div>
+        <div class="step-desc">A comprehensive written plan with asset allocation, investment strategy, and milestones.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">Implementation</div>
+        <div class="step-desc">We guide execution — you invest directly with AMCs/brokers, no intermediary involved.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">05</div>
+        <div class="step-title">Review & Rebalance</div>
+        <div class="step-desc">Quarterly portfolio reviews and annual plan updates to adapt to life changes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEBI COMPLIANCE DISCLOSURES -->
+<section id="compliance">
+  <div class="section-inner">
+    <p class="section-label">Regulatory Disclosures</p>
+    <h2>SEBI Mandated Disclosures</h2>
+    <p class="section-sub">As required under SEBI (Investment Advisers) Regulations, 2013, the following disclosures are made for client transparency.</p>
+    <div class="compliance-grid">
+      <div class="compliance-card disclaimer">
+        <h3>⚠️ Risk Disclaimer</h3>
+        <p>Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM does not guarantee performance of the intermediary or provide any assurance of returns to investors.</p>
+      </div>
+      <div class="compliance-card fees">
+        <h3>💰 Fee Structure & Disclosure</h3>
+        <ul>
+          <li>Advisory fee: ₹15,000 – ₹50,000 per annum (flat fee)</li>
+          <li>Financial Plan: ₹8,000 – ₹25,000 (one-time)</li>
+          <li>No commissions, trails, or referral fees accepted</li>
+          <li>All fees charged directly by the advisor</li>
+          <li>Fee structure disclosed upfront before engagement</li>
+        </ul>
+      </div>
+      <div class="compliance-card grievance">
+        <h3>📋 Grievance Redressal</h3>
+        <p>For any complaints or grievances, contact us first at dibanalysis@gmail.com. If unresolved within 30 days, escalate to SEBI at <strong>scores.gov.in</strong> or call SEBI toll-free: <strong>1800 266 7575</strong>. ODR platform: <strong>smartodr.in</strong></p>
+      </div>
+      <div class="compliance-card risk">
+        <h3>📄 Regulatory Information</h3>
+        <ul>
+          <li>SEBI Reg. No: INA300016695</li>
+          <li>Category: Individual Investment Adviser</li>
+          <li>Validity: Perpetual (subject to compliance)</li>
+          <li>Registered Office: Kolkata, West Bengal</li>
+          <li>Principal Regulator: SEBI, Mumbai</li>
+          <li>BASL Member: Yes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-bg">
+  <div class="section-inner">
+    <p class="section-label">Client Stories</p>
+    <h2>What Our Clients Say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"Rajesh helped me restructure my entire portfolio after I realized I was over-exposed to bad funds. Within 18 months, my returns improved significantly and I finally have a real retirement plan."</p>
+        <div class="testimonial-author">Anita Desai</div>
+        <div class="testimonial-role">Senior Manager, Kolkata</div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"As an NRI, I was struggling with tax-efficient investment options in India. Artha Wealth gave me a structured, transparent plan with no sales pressure. Completely fee-only — that's rare."</p>
+        <div class="testimonial-author">Vikram Nair</div>
+        <div class="testimonial-role">IT Professional, Dubai</div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"I came in with scattered investments and no clear goals. The financial plan they created gave me clarity for the first time. Highly recommend to anyone serious about their financial future."</p>
+        <div class="testimonial-author">Priya & Amit Shah</div>
+        <div class="testimonial-role">Business Owners, Mumbai</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD GENERATION / CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <p class="section-label">Get in touch</p>
+        <h2>Start Your Wealth Journey Today</h2>
+        <p class="section-sub" style="margin-bottom:36px;">Book a free 30-minute discovery call. No obligations, no sales pitch — just honest, informed conversation about your financial future.</p>
+        <div class="contact-detail">
+          <div class="contact-icon">📍</div>
+          <div>
+            <strong>Office Address</strong>
+            <p>113A/3 SARAT GHOSH GARDEN ROAD, OPPOSITE DELHI PUBLIC SCHOOL KASBA, KOLKATA, WEST BENGAL, 700031</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">📞</div>
+          <div>
+            <strong>Phone</strong>
+            <p>+91 3324050501</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <strong>Email</strong>
+            <p>SDSOMRAJ25@GMAIL.COM</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <strong>Office Hours</strong>
+            <p>Mon – Fri: 9:30 AM – 6:30 PM<br/>Sat: 10:00 AM – 1:00 PM</p>
+          </div>
+        </div>
+      </div>
+      <div class="lead-form">
+        <h3>Book Free Consultation</h3>
+        <p class="form-sub">Fill in your details and we'll get back within 24 hours.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Rajesh"/>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Kumar"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="you@example.com"/>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+91 98765 43210"/>
+        </div>
+        <div class="form-group">
+          <label>I am interested in</label>
+          <select>
+            <option>Financial Planning</option>
+            <option>Equity Advisory</option>
+            <option>Mutual Fund Advisory</option>
+            <option>Portfolio Review</option>
+            <option>Goal-Based Planning</option>
+            <option>Retirement Planning</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Approximate Investment Amount</label>
+          <select>
+            <option>Under ₹10 Lakhs</option>
+            <option>₹10 – ₹50 Lakhs</option>
+            <option>₹50 Lakhs – ₹1 Crore</option>
+            <option>Above ₹1 Crore</option>
+          </select>
+        </div>
+        <button class="form-submit">Request Free Consultation →</button>
+        <p class="form-disclaimer">By submitting this form, you confirm you have read and understood our risk disclosures. This is not an offer or solicitation to buy/sell securities. Investment advisory services are subject to SEBI (IA) Regulations, 2013.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-name">Artha Wealth Advisors</span>
+          <span class="logo-sub">SEBI Registered Investment Advisor</span>
+        </div>
+        <p>Providing fee-only, unbiased investment advisory services to individuals and families across India since 2012.</p>
+        <div class="footer-sebi">
+          <p>SEBI Registration No.</p>
+          <strong>INA300016695</strong>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Equity Advisory</a>
+        <a href="#services">Mutual Funds</a>
+        <a href="#services">Financial Planning</a>
+        <a href="#services">Portfolio Review</a>
+        <a href="#services">Goal Planning</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#about">About Us</a>
+        <a href="#process">Our Process</a>
+        <a href="#compliance">Disclosures</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Regulatory</h4>
+        <a href="https://www.sebi.gov.in" target="_blank">SEBI Website</a>
+        <a href="https://scores.gov.in" target="_blank">SCORES Portal</a>
+        <a href="https://smartodr.in" target="_blank">ODR Platform</a>
+        <a href="#compliance">Grievance Policy</a>
+        <a href="#compliance">Fee Disclosure</a>
+      </div>
+    </div>
+    <div class="footer-disclaimer">
+      <p>Disclaimer: Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM does not guarantee performance of the intermediary or provide any assurance of returns to investors. Past performance is not indicative of future returns. The information provided on this website is for general informational purposes only and does not constitute investment advice. Please consult your advisor before making any investment decisions. Artha Wealth Advisors is registered with SEBI as an Investment Adviser under Registration No. INA300016695.</p>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Artha Wealth Advisors. All rights reserved. | Kolkata, West Bengal, India</p>
+      <p>Designed for transparency. Built for trust.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
